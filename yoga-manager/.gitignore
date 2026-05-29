@@ -1,0 +1,15 @@
+.gradle/
+build/
+out/
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+.idea/libraries/
+.idea/modules/
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/.gitignore
+yoga_data.dat
