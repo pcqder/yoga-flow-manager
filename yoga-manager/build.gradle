@@ -5,18 +5,23 @@ plugins {
 group = 'com.yoga'
 version = '1.0.0'
 
+repositories {
+    mavenCentral()
+}
+
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(26)
+        languageVersion = JavaLanguageVersion.of(21)
     }
+}
+
+dependencies {
+    implementation 'io.javalin:javalin:6.3.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
 }
 
 application {
     mainClass = 'com.yoga.YogaManager'
-}
-
-run {
-    standardInput = System.in
 }
 
 tasks.withType(JavaCompile).configureEach {
