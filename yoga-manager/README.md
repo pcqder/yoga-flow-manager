@@ -1,42 +1,33 @@
-# Yoga Studio Manager
+# Yoga Studio Manager (Web App)
 
-A console-based Java app for a yoga teacher to manage students and plan classes.
+A simple Java web application built with Gradle + Javalin to manage yoga
+students and plan classes — all in your browser.
 
-## Run it in IntelliJ (3 steps)
+## Requirements
 
-1. **Unzip** this archive anywhere.
-2. **IntelliJ IDEA** → `File` → `Open...` → select the `YogaManagerGradle` folder → **Trust Project**.
-3. Wait for Gradle to sync (status bar at the bottom). When done, click the green ▶ next to **YogaManager** in the top toolbar.
+- JDK 17 or newer (works on JDK 21 / 26)
+- IntelliJ IDEA (Community is fine)
 
-> No need to install Gradle or a JDK manually — the Gradle wrapper bundled in this project downloads Gradle 8.10 automatically and the build toolchain downloads JDK 17 if you don't have it.
+## Run from IntelliJ
 
-### Alternative: command line
+1. **File → Open** → select the `yoga-manager` folder → **Trust Project**
+2. Wait for the Gradle sync to finish
+3. Open the Gradle tool window → `yoga-manager → Tasks → application → run` (double-click)
+4. Open <http://localhost:7070> in your browser
+
+Alternatively run from a terminal inside the project:
 
 ```bash
-./gradlew run --console=plain          # macOS / Linux
-gradlew.bat run --console=plain        # Windows
+./gradlew run          # macOS / Linux
+gradlew.bat run        # Windows
 ```
+
+Data is persisted to `yoga_data.dat` next to the working directory.
 
 ## Features
 
-- Add / list students with membership type (Monthly, Drop-in, Unlimited)
-- Track monthly attendance and payment status
-- Schedule classes, enroll / unenroll students, capacity limits
-- Monthly revenue report
-- Reset monthly data
-- Auto-saves to `yoga_data.dat` in the project folder
-
-## Project layout
-
-```
-YogaManagerGradle/
-├── build.gradle
-├── settings.gradle
-├── gradlew / gradlew.bat       # Gradle wrapper (no install needed)
-├── gradle/wrapper/
-├── .idea/runConfigurations/    # Pre-wired Run buttons for IntelliJ
-└── src/main/java/com/yoga/
-    ├── YogaManager.java        # main()
-    ├── Student.java
-    └── YogaClass.java
-```
+- Dashboard with monthly revenue / attendance stats
+- Add, edit, remove students; mark payment & attendance
+- Schedule classes with date, time, location, capacity
+- Enroll students into classes
+- Reset month to start a new billing cycle
